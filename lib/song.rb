@@ -2,7 +2,9 @@ require 'pry'
 class Song
   attr_accessor :name, :artist_name
   @@all = []
-
+ 
+ #self is always the same throughout the method. in a "class" method self is class. in an "instance" method self is the instance.
+  
   
 
   def self.all
@@ -58,6 +60,8 @@ class Song
   def self.destroy_all
   @@all = []
   end
+  
+  
   def self.create_from_filename(mp3)
     artist_name = mp3.split(" - ")[0]
     title = mp3.split(".")[0]
